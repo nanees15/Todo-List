@@ -1,0 +1,40 @@
+<div class="container">
+    <blockquote class="blockquote text-center">
+        <p>List of Tasks</p>
+    </blockquote>
+    <div *ngIf="tasksService.tasks.length == 0">
+        <p class="alert alert-danger">No tasks for today</p>
+    </div>
+    <div *ngIf="tasksService.tasks.length != 0">
+      <table class="table text text-center">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Completed</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasksService.tasks; let i = index">
+            <td>{{ task.title }}</td>
+            <td>{{ task.description }}</td>
+            <td>{{ task.due_date }}</td>
+            <td>
+              <input type="checkbox">
+            </td>
+            <td>
+              <button class="update-btn btn btn-primary" [routerLink]="['/task', i]">Update</button>
+              <button class="delete-btn btn btn-danger" (click)="DeleteTask(i)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+          
+    </div>
+    <div>
+        <a routerLink="add-task" class="add-task-btn btn btn-secondary">Add new task</a>
+    </div>
+</div>

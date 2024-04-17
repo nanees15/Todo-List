@@ -1,0 +1,16 @@
+<div class="container">
+    <h2 class="text-center">Edit task</h2>
+    <input #taskTitle type="text" class="form-control" placeholder="Task Name" [(ngModel)] = "task.title"> <br>
+    <textarea #taskDescription class="form-control" placeholder="Task Description" [(ngModel)] = "task.description"></textarea> <br>
+    
+    <div class="card flex flex-wrap gap-3 p-fluid">
+        <div class="flex-auto">
+            <p-calendar [(ngModel)]="task.due_date" dataType="string" [showIcon]="true" inputId="buttondisplay"></p-calendar>
+        </div>
+    
+        
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="updateTask()">Update</button>
+    <button class="btn btn-secondary" routerLink="">Cancel</button>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+    <h2 class="text-center">Add new task form</h2>
+    <input #taskTitle type="text" class="form-control" placeholder="Task Name"><br>
+    <textarea #taskDescription class="form-control" placeholder="Task Description"></textarea> <br>
+    
+    <div class="card flex flex-wrap gap-3 p-fluid">
+        <div class="flex-auto">
+            <p-calendar [(ngModel)]="date1" dataType="string" [showIcon]="true" inputId="buttondisplay"></p-calendar>
+        </div>
+    
+        
+    </div>
+    <br>
+    <button class="btn btn-success" (click)="saveTask(taskTitle,taskDescription)">Save</button>
+    <button class="btn btn-primary" routerLink="">Cancel</button>
+</div>
